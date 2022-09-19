@@ -9,6 +9,7 @@ public static class GradeCalculator
             throw new ArgumentOutOfRangeException();
         }
         
+        //In descending order
         Dictionary<int, int> grades = new Dictionary<int, int>();
         grades.Add(12, 90);
         grades.Add(10, 78);
@@ -17,15 +18,18 @@ public static class GradeCalculator
         grades.Add(2, 34);
         grades.Add(0, 8);
         grades.Add(-3, 0);
-        //grade + lower boundary in descending order
-        foreach (KeyValuePair<int,int> grade in grades)
+        
+        //Maybe sort by key first to ensure descending order
+        foreach (var grade in grades)
         {
-            if (grade.Value < percentage)
+            //lower boundary = 90, percentage 92   => 12
+            if (grade.Value <= percentage)
             {
                 return grade.Key;
             }
         }
         
+        //"Not all code returns a value", so...
         throw new ArgumentOutOfRangeException();
     }
 }
