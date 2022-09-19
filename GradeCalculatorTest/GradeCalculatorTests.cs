@@ -2,7 +2,7 @@ using SDM_Assignment4;
 
 namespace GradeCalculatorTest;
 
-public class UnitTest1
+public class GradeCalculatorTests
 {
     [Theory]
     [InlineData(-1)]
