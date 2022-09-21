@@ -19,6 +19,6 @@ public class MaturityClassifier
     public bool IsTeenager(DateOnly birthday)
     {
         DateOnly today = Today ?? DateOnly.FromDateTime(DateTime.Now);
-        return birthday.AddYears(13) <= today && birthday.AddYears(19) >= today;
+        return birthday.AddYears(13) <= today && today <= birthday.AddYears(19).AddMonths(11).AddDays(30);
     }
 }

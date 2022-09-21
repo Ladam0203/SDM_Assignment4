@@ -21,7 +21,7 @@ public static class MaturityClassifierTests
     
     [Theory]
     [InlineData(2006, 6, 12)] //last day before turning 13
-    [InlineData(2003, 11, 30)] //last day before turning 20
+    [InlineData(2000, 1, 2)] //last day before turning 20
     public static void AgeInsideBoundaries(int year, int month, int day)
     {
         MaturityClassifier classifier = new MaturityClassifier(today);
